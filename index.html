@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="PT-BR" class="w-full h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>NoLance - CMS</title>
+</head>
+<body class="flex w-screen h-screen bg-[#ffffff]">
+    <div class="barra-verde bg-[#328336] h-full w-32">
+        <img src="./src/img/NoLance_Logo.svg" alt="NoLance" class="p-8">
+    </div>
+    <div class="flex flex-1 items-center justify-center">
+        <div class="m-8 items-center flex flex-col">
+            <h1 class="text-4xl mb-8">Gerenciamento</h1>
+            <div class="mt-4">
+                <label for="email" class="text-gray-400">Email</label>
+            </div>
+            <div class="my-4 border-b w-full">
+                <input id="email" type="text" class="border-none border-black w-full py-2 px-4 focus:outline-none text-center">
+            </div>
+            <div class="mt-4">
+                <label for="password" class="text-gray-400">Senha</label>
+            </div>
+            <div class="my-4 border-b w-full">
+                <input id="password" type="password" class="border-none w-full py-2 px-4 focus:outline-none text-center">
+            </div>
+            <span class="text-gray-400">Esqueceu a sua Senha?</span>
+            <a href="./src/html/home.html">
+                <button type="button" class="m-2.5 rounded-lg p-2.5 w-48 text-white bg-[#328336] mt-8">Login</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
