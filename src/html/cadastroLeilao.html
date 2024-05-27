@@ -10,15 +10,72 @@
     <div class="barra-verde bg-[#328336] h-full w-32">
         <img src="../img/NoLance_Logo.svg" alt="NoLance" class="p-8">
     </div>
-    <div class="content mx-24 my-8">
-        <div class="titlePage flex flex-row bg-gray-200 w-full h-16 p-4">
+    <div class="content mx-24 ">
+        <div class="titlePage flex flex-row w-full h-16 p-4">
             <h1 class="text-4xl">Cadastrar um Leilão</h1>
         </div>
-        <div class="formularios pt-12">
-            <div class="cadastroLeilao border border-black border-lg h-96 w-96">
-
+        <div class="formularios pt-4 flex flex-row gap-12 ">
+            <div class="cadastroLeilao border border-black border-lg h-[78vh] w-[110%] p-4">
+                <div class="nome pb-2">
+                    <h1>Nome</h1>
+                    <input type="text" class="h-full w-full">
+                </div>
+                <div class="flex flex-row gap-4">
+                    <div class="flex flex-col">
+                        <h1>Categoria</h1>
+                        <select name="" id=""></select>
+                        <h1>Data Inicial</h1>
+                        <input type="date" name="" id="">
+                        <h1>Data Final</h1>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div>
+                        <h1>Foto Capa</h1>
+                        <input type="text" class="h-[87%]">
+                    </div>
+                </div>
+                <div class="flex flex-row justify-evenly my-2">
+                    <div class="flex flex-col items-center">
+                        <h1>Presencial</h1>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h1>Online</h1>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h1>Misto</h1>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                </div>
+                <div class="flex flex-row ">
+                    <div class="flex flex-col ">
+                        <h1>Comitente</h1>
+                        <div class="flex flex-row ">
+                            <select name="" id="" class="w-48"></select>
+                            <h1 class="pl-4 pt-2 cursor-pointer">Cadastrar Comitente +</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col pt-2">
+                    <h1>Retirada</h1>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="">
+                <h1 class="p-2">Lotes</h1>
+                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
+                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
+                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
+                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
+                <div class="addLote flex justify-center my-4 ">
+                    <h1 class="cursor-pointer">Adicionar Lote +</h1>
+                </div>
             </div>
 
+        </div>
+        <div class="cadastrar">
+            <button class="m-2.5 p-2.5 w-64 text-black bg-[#56AB5A] ">Cadastrar</button>
         </div>
     </div>
 </body>
