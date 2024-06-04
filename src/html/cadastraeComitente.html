@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="../js/cadastrarComitente.js"></script>
     <title>NoLance - CMS</title>
 </head>
 <body class="flex w-screen h-screen bg-[#ffffff]">
@@ -14,7 +15,7 @@
         <div class="titlePage flex flex-row w-full h-16 p-4">
             <h1 class="text-4xl">Cadastrar um Comitente</h1>
         </div>
-        <div class="cadastroLeilao border border-black border-lg h-[78vh] w-[110%] p-4">
+        <div class="cadastroLeilao border border-black border-lg h-[50vh] w-[110%] p-4">
             <div class="nome pb-2">
                 <h1>Nome</h1>
                 <input type="text" class="h-full w-full">
@@ -28,11 +29,11 @@
                 <input type="email" class="h-full w-full">
             </div>
             <div>
-                <Select>
-                    <option value="pf">Pessoa Física</option>
-                    <option value="pj">Pessoa Juridica</option>
-                </Select>
-                <div class="flex flex-row gap-12 ">
+                <select name="pessoa" id="pessoa" class="w-48" onclick="pessoaFouJ()">
+                    <option value="PJ">Pessoa Jurídica</option>
+                    <option value="PF">Pessoa Física</option>
+                </select>
+                <div class="PF flex hidden flex-row gap-12 " id="PF">
                     <div class="flex flex-col">
                         <h1>CPF</h1>
                         <input type="text">
@@ -42,6 +43,23 @@
                         <input type="text">
                     </div>
                 </div>    
+                <div class="PJ flex hidden flex-row gap-12" id="PJ">
+                    <div class="flex flex-col">
+                        <h1>Razão Social</h1>
+                        <input type="text">
+                    </div>
+                    <div class="flex flex-col">
+                        <h1>CNPJ</h1>
+                        <input type="text">
+                    </div>
+                    <div class="flex flex-col w-full">
+                        <h1>Descrição</h1>
+                        <input type="text">
+                    </div>
+                </div>  
+            </div>
+            <div class="button flex itens-center justify-center">
+                <button type="button" class="m-2.5 rounded-lg p-2.5 w-48 text-white bg-[#328336] mt-8">Cadastrar</button>
             </div>
             
         </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="../js/cadastroLeilao.js" defer></script>
     <title>NoLance - CMS</title>
 </head>
 <body class="flex w-screen h-screen bg-[#ffffff]">
@@ -23,11 +24,14 @@
                 <div class="flex flex-row gap-4">
                     <div class="flex flex-col">
                         <h1>Categoria</h1>
-                        <select name="" id=""></select>
+                        <select name="categoria" id="categoria">
+                            <option value="arte">Arte</option>
+                            <option value="carros">Carros</option>
+                        </select>
                         <h1>Data Inicial</h1>
-                        <input type="date" name="" id="">
+                        <input type="date" name="data_inicial" id="data_inicial">
                         <h1>Data Final</h1>
-                        <input type="date" name="" id="">
+                        <input type="date" name="data_final" id="data_final">
                     </div>
                     <div>
                         <h1>Foto Capa</h1>
@@ -37,23 +41,28 @@
                 <div class="flex flex-row justify-evenly my-2">
                     <div class="flex flex-col items-center">
                         <h1>Presencial</h1>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="presencial" id="presencial">
                     </div>
                     <div class="flex flex-col items-center">
                         <h1>Online</h1>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="online" id="online">
                     </div>
                     <div class="flex flex-col items-center">
                         <h1>Misto</h1>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="misto" id="misto">
                     </div>
                 </div>
                 <div class="flex flex-row ">
                     <div class="flex flex-col ">
                         <h1>Comitente</h1>
                         <div class="flex flex-row ">
-                            <select name="" id="" class="w-48"></select>
-                            <h1 class="pl-4 pt-2 cursor-pointer">Cadastrar Comitente +</h1>
+                            <select name="pessoa" id="pessoa" class="w-48">
+                                <option value="comitente1">Comitente 1</option>
+                                <option value="comitente2">Comitente 2</option>
+                            </select>
+                            <a href="./cadastraeComitente.html">
+                                <h1 class="pl-4 pt-2 cursor-pointer">Cadastrar Comitente +</h1>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -69,10 +78,10 @@
                 <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
                 <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
                 <div class="addLote flex justify-center my-4 ">
+                    <a href="../html/cadastrarLote.html"></a>
                     <h1 class="cursor-pointer">Adicionar Lote +</h1>
                 </div>
             </div>
-
         </div>
         <div class="cadastrar">
             <button class="m-2.5 p-2.5 w-64 text-black bg-[#56AB5A] ">Cadastrar</button>

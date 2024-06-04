@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="PT-BR" class="w-full h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="../js/cadastrarComitente.js"></script>
+    <title>NoLance - CMS</title>
+</head>
+<body class="flex w-screen h-screen bg-[#ffffff]">
+    <div class="barra-verde bg-[#328336] h-full w-32">
+        <img src="../img/NoLance_Logo.svg" alt="NoLance" class="p-8">
+    </div>
+    <div class="content mx-24 ">
+        <div class="titlePage flex flex-row w-full h-16 p-4">
+            <h1 class="text-4xl">Cadastrar um lote</h1>
+        </div>
+        <div class="cadastroLeilao border border-black border-lg h-[50vh] w-[110%] p-4">
+            <div class="nome pb-2">
+                <h1>Nome</h1>
+                <input type="text" class="h-full w-full">
+            </div>
+            <div class="flex flex-row gap-12">
+                <div class="categoria">
+                    <h1>Categoria</h1>
+                    <input type="text">
+                </div>
+                <div class="categoria">
+                    <h1>Reserva</h1>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="descricao pb-2">
+                <h1>Descrição</h1>
+                <input type="text" class="h-24 w-full">
+            </div>
+            <div class="data_inicial felx flex-row">
+                <h1>Data Inicial</h1>
+                <input type="date" name="data_inicial" id="data_inicial">
+            </div>
+            <div class="Imagens flex flex-col pt-4">
+                <h1>Imagens</h1>
+                <div class="addImg flex flex-row py-4 gap-12">
+                    <div class="add border border-black w-32 h-32">
+                        <p class="flex itens-center justify-center w-full h-full text-6xl pt-6">+</p>
+                    </div>
+                    <div class="add border border-black w-32 h-32">
+    
+                    </div>
+                    <div class="add border border-black w-32 h-32">
+    
+                    </div>
+                </div>
+
+            </div>
+            <div class="button flex itens-center justify-center">
+                <button type="button" class="m-2.5 rounded-lg p-2.5 w-48 text-white bg-[#328336] mt-8">Cadastrar</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
