@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Show Message on Button Click</title>
+    <style>
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <button id="showMessageButton">Click me!</button>
+    <div id="message" class="message">Hello, this is your message!</div>
+
+
+
+
+
+
+
+
+
+    <div class="flex items-center justify-center w-36">
+        <label for="foto-dropzone-file"
+            class="flex flex-col items-center justify-center w-full h-28 border-2 bg-[#ffffff] border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-[#f2f2f2]">
+            <div class="flex flex-col items-center justify-center" id="img_capa">
+                <img src="./src/img/plusIcon.svg" alt="">
+                <p class="mb-2 text-gray-500 text-xs dark:text-gray-400">
+                    <span class="font-semibold font-">Foto  - Click to upload</span> or drag and drop
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">JPEG or PNG</p>
+            </div>
+            <input id="foto-dropzone-file" type="file" class="hidden" />
+        </label>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        document.getElementById('showMessageButton').addEventListener('click', function() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
