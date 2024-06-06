@@ -10,6 +10,13 @@ async function getLeilao() {
     const data = await response.json()
     return data.leiloes
 }
+async function getLeilaoID(id) {
+    const url = `http://localhost:8080/v1/nolance/leilao/${id}`
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+}
+
 
 //Função que formata a data
 function formatDate(isoString) {
@@ -27,7 +34,7 @@ async function criarLinhaLotes(){
     
     console.log(leiloes);
     
-    leiloes.forEach(leilao => {
+     leiloes.forEach(async leilao => {
         
         const tableRow = document.createElement('tr')
 
@@ -40,6 +47,14 @@ async function criarLinhaLotes(){
         nome.classList.add('px-8')
         nome.textContent = leilao.nome
 
+        const qntdLotes = document.createElement('td');
+        qntdLotes.classList.add('px-8');
+        // Pra pegar a quantidade de lotes é preciso chamar getLeilaoID
+        const id = leilao.id;
+        const quantidadeLotes = await getLeilaoID(id);
+        console.log(quantidadeLotes);
+        qntdLotes.textContent = `${quantidadeLotes.qntd_lotes} Lotes`; 
+        
         const categoria = document.createElement('td')
         categoria.classList.add('px-8')
         categoria.textContent = leiloes[0].categoria[0].nome;
@@ -70,7 +85,7 @@ async function criarLinhaLotes(){
         acoes.append(editar, lixeira)
 
 
-        tableRow.append(checkBox, nome, categoria, inicio, encerramento, modalidade, acoes)
+        tableRow.append(checkBox, nome, qntdLotes, categoria, inicio, encerramento, modalidade, acoes)
         tbl_leiloes.appendChild(tableRow)
     });
 
@@ -79,3 +94,4 @@ async function criarLinhaLotes(){
 }
 
 criarLinhaLotes()
+

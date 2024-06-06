@@ -30,16 +30,17 @@
             </div>
             <div>
                 <select name="pessoa" id="pessoa" class="w-48" onclick="pessoaFouJ()">
+                    <option value="null"></option>
                     <option value="PJ">Pessoa Jurídica</option>
                     <option value="PF">Pessoa Física</option>
                 </select>
                 <div class="PF flex hidden flex-row gap-12 " id="PF">
                     <div class="flex flex-col">
-                        <h1>CPF</h1>
+                        <h1>CPF (somente numeros)</h1>
                         <input type="text">
                     </div>
                     <div class="flex flex-col">
-                        <h1>RG</h1>
+                        <h1>RG (somente numeros)</h1>
                         <input type="text">
                     </div>
                 </div>    
@@ -49,7 +50,7 @@
                         <input type="text">
                     </div>
                     <div class="flex flex-col">
-                        <h1>CNPJ</h1>
+                        <h1>CNPJ (somente numeros)</h1>
                         <input type="text">
                     </div>
                     <div class="flex flex-col w-full">

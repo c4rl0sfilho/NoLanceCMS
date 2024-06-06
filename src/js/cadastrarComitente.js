@@ -7,8 +7,11 @@ function pessoaFouJ(){
     if (select.value == 'PF') {
                 divPF.classList.remove('hidden');
                 divPJ.classList.add('hidden');
-            } else {
+            } else if(select.value == 'PJ') {
                 divPJ.classList.remove('hidden');
+                divPF.classList.add('hidden');
+            }  else if(select.value == 'null'){
+                divPJ.classList.add('hidden');
                 divPF.classList.add('hidden');
             }
 }
