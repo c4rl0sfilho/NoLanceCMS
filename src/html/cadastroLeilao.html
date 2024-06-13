@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="PT-BR" class="w-full h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <script src="../js/cadastroLeilao.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+    <script src="../js/cadastroLeilao.js" type="module" defer></script>
     <title>NoLance - CMS</title>
 </head>
+
 <body class="flex w-screen h-screen bg-[#ffffff]">
     <div class="barra-verde bg-[#328336] h-full w-32">
         <img src="../img/NoLance_Logo.svg" alt="NoLance" class="p-8">
@@ -16,50 +19,83 @@
             <h1 class="text-4xl">Cadastrar um Leilão</h1>
         </div>
         <div class="formularios pt-4 flex flex-row gap-12 ">
-            <div class="cadastroLeilao border border-black border-lg h-[78vh] w-[110%] p-4">
+            <div class="cadastroLeilao flex flex-col justify-evenly border border-black border-lg h-[78vh] w-[110%] p-4">
                 <div class="nome pb-2">
                     <h1>Nome</h1>
                     <input type="text" class="h-full w-full">
                 </div>
-                <div class="flex flex-row gap-4">
+                <div class="flex flex-row gap-4 ">
                     <div class="flex flex-col">
                         <h1>Categoria</h1>
-                        <select name="categoria" id="categoria">
-                            <option value="arte">Arte</option>
-                            <option value="carros">Carros</option>
+                        <select name="categoria" id="categorias">
+                             <option value=""></option>
                         </select>
                         <h1>Data Inicial</h1>
-                        <input type="date" name="data_inicial" id="data_inicial">
+                        <input type="datetime-local" name="data_inicial" id="data_inicial">
                         <h1>Data Final</h1>
-                        <input type="date" name="data_final" id="data_final">
+                        <input type="datetime-local" name="data_final" id="data_final">
                     </div>
-                    <div>
+                  
+                    <div class="col-span-1  h-[250px] w-[250px] flex flex-col  justify-evenly">
                         <h1>Foto Capa</h1>
-                        <input type="text" class="h-[87%]">
+                        <div class="w-4/5 h-2/4 rounded-lg">
+                            <img class="w-full h-full cursor-pointer rounded-lg" src="" alt="" id="foto-bg">
+                        </div>
+                        <div class="flex items-center justify-center w-4/5 h-2/4 ">
+                            <label for="bg-dropzone-file"
+                                class="flex flex-col items-center justify-center w-full h-full border-2 bg-[#BADBAD] border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-gray-300">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6" id="img_fundo">
+                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                            class="font-semibold">Background Foto - Click to upload</span> or drag
+                                        and
+                                        drop</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">JPEG, PNG ou GIF</p>
+                                </div>
+                                <input id="bg-dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col justify-evenly my-2" id="modalidades">
                     </div>
                 </div>
-                <div class="flex flex-row justify-evenly my-2">
-                    <div class="flex flex-col items-center">
-                        <h1>Presencial</h1>
-                        <input type="checkbox" name="presencial" id="presencial">
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <h1>Online</h1>
-                        <input type="checkbox" name="online" id="online">
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <h1>Misto</h1>
-                        <input type="checkbox" name="misto" id="misto">
-                    </div>
-                </div>
-                <div class="flex flex-row ">
-                    <div class="flex flex-col ">
-                        <h1>Comitente</h1>
-                        <div class="flex flex-row ">
-                            <select name="pessoa" id="pessoa" class="w-48">
-                                <option value="comitente1">Comitente 1</option>
-                                <option value="comitente2">Comitente 2</option>
+                <div class="flex flex-row  w-full justify-between place-items-center pr-12">
+                    <div class="flex flex-col  w-1/5">
+                        <div class="flex flex-col justify-evenly" id="adicionarLotes">
+                            <h1 class="p-2">Lotes</h1>
+                            <select name="lotes" id="lotes">
+                                 <option value=""></option>
                             </select>
+                           
+                        </div>
+                        <div class="addLote flex w-32 justify-center my-4 ">
+                            <a href="../html/cadastrarLote.html">
+                                <h1 class="cursor-pointer">Adicionar Lote +</h1>
+                            </a>
+                        </div>
+                       
+                    </div>
+                    <div class="w-8 h-8 place-items-center mb-8">
+                        <button class="flex items-center justify-center w-8 h-8 rounded-full bg-[#BADBAD] text-gray-600 hover:bg-gray-400" id="btnMaisLote">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-row ">
+                        <div class="flex flex-col ">
+                            <h1>Comitente</h1>
+                            <div class="flex flex-row ">
+                                <select name="pessoa" id="comitentes" class="w-48">
+                                    <option></option>
+                                </select>
+                            </div>
                             <a href="./cadastraeComitente.html">
                                 <h1 class="pl-4 pt-2 cursor-pointer">Cadastrar Comitente +</h1>
                             </a>
@@ -71,22 +107,10 @@
                     <input type="text">
                 </div>
             </div>
-            <div class="">
-                <h1 class="p-2">Lotes</h1>
-                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
-                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
-                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
-                <div class="lote border border-black border-lg w-96 p-1 mb-2">Nome</div>
-                <div class="addLote flex justify-center my-4 ">
-                    <a href="../html/cadastrarLote.html">
-                        <h1 class="cursor-pointer">Adicionar Lote +</h1>
-                    </a>
-                </div>
+            <div class="cadastrar">
+                <button class="m-2.5 p-2.5 w-64 text-black bg-[#56AB5A]" id="btnCadastro">Cadastrar</button>
             </div>
         </div>
-        <div class="cadastrar">
-            <button class="m-2.5 p-2.5 w-64 text-black bg-[#56AB5A] ">Cadastrar</button>
-        </div>
-    </div>
 </body>
+
 </html>

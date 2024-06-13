@@ -1,25 +1,8 @@
-async function getLotes() {
-    const url = 'http://localhost:8080/v1/nolance/lotes'
-    const response = await fetch(url)
-    const data = await response.json()
-    return data.lotes
-}
-async function getLeilao() {
-    const url = 'http://localhost:8080/v1/nolance/leiloes'
-    const response = await fetch(url)
-    const data = await response.json()
-    return data.leiloes
-}
-async function getLeilaoID(id) {
-    const url = `http://localhost:8080/v1/nolance/leilao/${id}`
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
-}
+'use strict';
 
 
 //Função que formata a data
-function formatDate(isoString) {
+export async function formatDate(isoString) {
     const date = new Date(isoString);
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Mês em JavaScript é 0-indexado
@@ -49,6 +32,7 @@ async function criarLinhaLotes(){
 
         const qntdLotes = document.createElement('td');
         qntdLotes.classList.add('px-8');
+
         // Pra pegar a quantidade de lotes é preciso chamar getLeilaoID
         const id = leilao.id;
         const quantidadeLotes = await getLeilaoID(id);
